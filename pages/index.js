@@ -1,8 +1,7 @@
 import Head from 'next/head'
-
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 import getHashParam from 'services/getHashParam'
-
 import getRandomVariant from 'config/getRandomVariant';
 
 
@@ -10,7 +9,9 @@ import ListPersonajes from 'components/Personaje/List';
 import ListComics from 'components/Comics/List';
 
 export default function Home(props) {
+  const [session, loading] = useSession();
 
+  console.log(session);
   const { dataCharacters, dataComics } = props
 
 

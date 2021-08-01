@@ -2,7 +2,11 @@ import Link from 'next/link'
 
 import Image from 'next/image'
 
+import { signIn, signOut, useSession } from 'next-auth/client'
+
 export default function Header() {
+
+    const [session, loading] = useSession();
     return (<header className="g-header">
         <Link href='/'>
             <a>
@@ -26,9 +30,20 @@ export default function Header() {
 
         <nav className="g-header__nav" >
             <ul className='o-ui-list o-ui-list--horizontal' >
-                <li className='a-btn a-btn--secondary'> Sign in </li>
-                <li className='a-btn a-btn--primary'> Sign up </li>
-            </ul> </nav>
+                {
+                    !session ? (
+                        <>
+                            <li className='a-btn a-btn--secondary' onClick={signIn}>Sign in</li>
+                            <li className='a-btn a-btn--primary'> Sign up </li>
+                        </>
+                    )
+                        : (
+                            <><li className='a-btn a-btn--secondary' onClick={signOut}>Log out ({session.user.name})</li></>
+                        )
+                }
+
+            </ul>
+        </nav>
     </header>
     )
 }

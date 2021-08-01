@@ -12,6 +12,15 @@ export default function DetallePersonaje(props) {
 }
 
 export async function getServerSideProps(context) {
+
+    const session = await getSession(req)
+
+    if (!session) {
+        res.writeHead(307, { Location: '/' });
+        res.end()
+        return { props: {} };
+    }
+
     const { params } = context
     const { id } = params
 

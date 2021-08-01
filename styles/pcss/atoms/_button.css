@@ -26,6 +26,10 @@
       background: $white;
       color: $black;
     }
+
+    a{
+      color: $white;
+    }
   }
   &--secondary {
     color: $white;
@@ -35,6 +39,19 @@
     &:focus {
       background: $colorBody;
       color: $bgBody;
+
+      a{
+        color: inherit;
+      }
+    }
+
+    a{
+      color: $white;
+      text-decoration: none;
+      &:hover{
+        background: $colorBody;
+        color: $bgBody;
+      }
     }
   }
 }

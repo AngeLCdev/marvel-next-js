@@ -1,15 +1,14 @@
 import Head from 'next/head'
-
-
 import getHashParam from 'services/getHashParam'
 
 import getRandomVariant from 'config/getRandomVariant';
 
 import List from 'components/Creador/List';
+import { getSession } from 'next-auth/client'
+
 
 export default function Index(props) {
 
-    console.log(props);
     return (
         <>
             <Head>
@@ -27,9 +26,20 @@ export default function Index(props) {
 
         </>
     )
+
 }
 
 export async function getServerSideProps(context) {
+    const { req, res } = context
+
+    const session = await getSession(req)
+
+    if (!session) {
+        res.writeHead(307, { Location: '/' });
+        res.end()
+        return { props: {} };
+    }
+
     const search = 'creators';
     const limit = 20;
     const url = getHashParam({ search, limit })
