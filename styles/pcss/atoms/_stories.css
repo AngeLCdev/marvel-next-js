@@ -1,0 +1,23 @@
+.a-stories{
+    
+    &__name{
+        font-size: .9rem;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__data{
+        background: #034259;
+        border-radius: 100px;
+        padding: .5rem 1rem;
+        width: max-content;
+        font-size: .9rem;
+    }
+}

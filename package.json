@@ -6,15 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "wcss": "postcss styles/pcss/index.css -o styles/css/index.css -w"
   },
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "next": "11.0.0",
+    "next-auth": "^3.27.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^5.0.6",
     "eslint": "7.29.0",
-    "eslint-config-next": "11.0.0"
+    "eslint-config-next": "11.0.0",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "postcss-mixins": "^8.1.0",
+    "postcss-nested": "^4.2.3",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0"
   }
 }

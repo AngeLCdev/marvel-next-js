@@ -1,0 +1,7 @@
+.o-container{
+    margin: 0 auto;
+    min-width: 420px;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 1500px;
+}

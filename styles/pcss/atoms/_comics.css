@@ -1,0 +1,5 @@
+.a-comic{
+    &__name{
+        font-size: .9rem;
+    }
+}

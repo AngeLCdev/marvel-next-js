@@ -1,0 +1,8 @@
+body{
+    font-family: $fontFamily;
+    font-size: $fsBody;
+    background: $bgBody;
+    color: $colorBody;
+
+    min-height: 100vh;
+}
