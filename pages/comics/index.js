@@ -1,6 +1,4 @@
 import Head from 'next/head'
-
-
 import getHashParam from 'services/getHashParam'
 
 import getRandomVariant from 'config/getRandomVariant';
