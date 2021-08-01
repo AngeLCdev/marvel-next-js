@@ -9,7 +9,7 @@ import ListPersonajes from 'components/Personaje/List';
 import ListComics from 'components/Comics/List';
 
 export default function Home(props) {
-  const [session, loading] = useSession();
+  const [session] = useSession();
 
   console.log(session);
   const { dataCharacters, dataComics } = props
